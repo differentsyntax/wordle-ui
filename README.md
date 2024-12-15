@@ -1,51 +1,157 @@
-# React + TypeScript + Vite
+# Wordle UI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based user interface for playing a Wordle-like game. This project provides a visually engaging and interactive frontend to guess words and track feedback based on user inputs.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![Screenshot 2024-12-15 at 3 45 59 AM](https://github.com/user-attachments/assets/e8e502cb-f624-496d-b8c1-8f1db9bfa431)
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-- Configure the top-level `parserOptions` property like this:
+---
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Features
+
+- **Dynamic Word Length Selection:** Choose the word length before starting a new game.
+- **Real-time Feedback:** Color-coded feedback for each guess, indicating correctness, incorrect placement, or incorrect letters.
+- **Game Status Indicators:** Clear messaging for game outcomes (win or lose).
+- **Responsive Design:** Optimized for desktop and mobile devices.
+- **Spinner Animation:** Indicates loading states during game setup or guess submissions.
+
+---
+
+## Demo
+
+<TBD>
+[Live Demo Link](#)
+
+---
+
+## Getting Started
+
+Follow these instructions to set up and run the project locally.
+
+### Prerequisites
+
+- **Node.js:** Install [Node.js](https://nodejs.org/) (LTS recommended).
+- **npm or Yarn:** Node Package Manager is required (comes with Node.js).
+
+### Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/differentsyntax/wordle-ui.git
+   cd wordle-ui
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+3. **Start the development server:**
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+4. **Open in the browser:**
+   The app will be running at [http://localhost:5173](http://localhost:5173).
+
+---
+
+## Usage
+
+1. **Choose Word Length:**
+   Select the desired word length using the dropdown menu.
+
+2. **Start a New Game:**
+   Click on "Play New" to start the game.
+
+3. **Submit Guesses:**
+   Enter your guess and click "Submit". Feedback will be displayed for each letter:
+   - **Green:** Correct letter in the correct position.
+   - **Yellow:** Correct letter in the wrong position.
+   - **Red:** Incorrect letter.
+
+4. **Game End:**
+   - Win: All letters are guessed correctly.
+   - Lose: Exceeded the maximum number of attempts.
+
+---
+
+## Project Structure
+
+```plaintext
+wordle-ui/
+├── src/
+│   ├── components/       # Reusable React components
+│   ├── styles/           # CSS files
+│   ├── App.tsx           # Main app component
+│   ├── main.tsx          # Entry point for React application
+├── public/               # Static files
+├── .env                  # Environment variables
+├── vite.config.ts        # Vite configuration
+├── package.json          # Project metadata and dependencies
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+---
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Technologies Used
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+- **React:** Frontend library for building the UI.
+- **TypeScript:** For static typing and type safety.
+- **Vite:** Lightning-fast development server and build tool.
+- **CSS:** For styling the components.
+
+---
+
+## Environment Variables
+
+The project uses the following environment variables:
+
+```plaintext
+VITE_API_BASE_URL="https://oygs3uv8y5.execute-api.us-west-2.amazonaws.com/prod/game"
+VITE_API_VALID_WORD="https://api.dictionaryapi.dev/api/v2/entries/en"
 ```
-# wordle-ui
+
+Polite internet behavior only please!
+
+### Setting Up
+
+1. Create a `.env` file in the root directory.
+2. Add the required environment variables.
+
+Example:
+```plaintext
+VITE_API_URL=https://your-api-url.com
+```
+
+---
+
+## Scripts
+
+- **Start Development Server:**
+  ```bash
+  npm run dev
+  ```
+---
+
+## Contributing
+
+Contributions are welcome! To contribute:
+
+1. Fork the repository.
+2. Create a new branch for your feature/bug fix.
+3. Commit your changes and push to your branch.
+4. Open a pull request.
+
+---
+
+## Acknowledgments
+
+- Inspired by the original [Wordle](https://www.nytimes.com/games/wordle/index.html).
+- Built with ❤️ using React and TypeScript.
+

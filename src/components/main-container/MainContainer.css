@@ -1,0 +1,135 @@
+.action-buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+button {
+  font-size: 1em;
+  font-weight: bold;
+  border-radius: 8px;
+  border: 2px solid #666666;
+  background-color: #333333;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #555555;
+}
+
+button:disabled {
+  background-color: #cccccc;
+  border-color: #aaaaaa;
+  color: #666666;
+  cursor: not-allowed;
+}
+
+.get-game-button,
+.start-game-button {
+  width: 200px;
+  height: 50px;
+}
+
+.start-game-length-select {
+  width: 50px;
+  height: 40px;
+  font-size: 0.9em;
+  font-weight: bold;
+  font-family: inherit;
+  background-color: #eeeeee;
+  color: #333333;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid #cccccc;
+}
+
+.start-game-length-select:hover {
+  background-color: #dddddd;
+}
+
+.guess-input {
+  height: 40px;
+  width: 200px;
+  border: 2px solid #666666;
+  border-radius: 8px;
+  padding: 5px;
+  font-size: 1em;
+  margin: 10px;
+  margin-right: 2px;
+  text-align: center;
+  background-color: #ffffff;
+  color: #333333;
+}
+
+.guess-input:focus {
+  outline: none;
+  border-color: #555555;
+  background-color: #f8f8f8;
+}
+
+.submit-guess-button {
+  width: 120px;
+  height: 40px;
+  font-size: 0.9em;
+  padding: 5px;
+  margin: 10px;
+}
+
+.header-wordle {
+  display: block;
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2em;
+  font-weight: bold;
+  color: #333333;
+  text-shadow: 1px 1px 2px #aaaaaa;
+  z-index: 10;
+  text-align: center;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  min-width: 100vw;
+  background-color: #f8f9fa;
+}
+
+@media (max-width: 768px) {
+  .get-game-button,
+  .start-game-button {
+    width: 150px;
+    height: 40px;
+    font-size: 0.9em;
+  }
+
+  .submit-guess-button {
+    width: 100px;
+    height: 35px;
+    font-size: 0.8em;
+  }
+
+  .start-game-length-select {
+    width: 50px;
+    height: 40px;
+    font-size: 0.9em;
+  }
+
+  .guess-input {
+    width: 150px;
+    height: 35px;
+  }
+
+  .header-wordle {
+    font-size: 1.5em;
+  }
+}

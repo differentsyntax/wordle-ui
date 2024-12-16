@@ -3,7 +3,8 @@
 A React-based user interface for playing a Wordle-like game. This project provides a visually engaging and interactive frontend to guess words and track feedback based on user inputs.
 
 
-![Screenshot 2024-12-15 at 3 45 59 AM](https://github.com/user-attachments/assets/e8e502cb-f624-496d-b8c1-8f1db9bfa431)
+<img width="620" alt="Screenshot 2024-12-15 at 4 00 23 PM" src="https://github.com/user-attachments/assets/fa753ba6-fd46-4f0b-b227-23c8aa460366" />
+
 
 
 

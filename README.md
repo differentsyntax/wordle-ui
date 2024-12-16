@@ -113,7 +113,7 @@ wordle-ui/
 The project uses the following environment variables:
 
 ```plaintext
-VITE_API_BASE_URL="https://oygs3uv8y5.execute-api.us-west-2.amazonaws.com/prod/game"
+VITE_API_BASE_URL="https://crztyoenti.execute-api.us-west-2.amazonaws.com/prod/game"
 VITE_API_VALID_WORD="https://api.dictionaryapi.dev/api/v2/entries/en"
 ```
 

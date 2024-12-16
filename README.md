@@ -1,4 +1,4 @@
-# Wordle UI
+# [Wordle UI](https://wordle-ui.netlify.app/)
 
 A React-based user interface for playing a Wordle-like game. This project provides a visually engaging and interactive frontend to guess words and track feedback based on user inputs.
 
@@ -22,8 +22,7 @@ A React-based user interface for playing a Wordle-like game. This project provid
 
 ## Demo
 
-<TBD>
-[Live Demo Link](#)
+[Live Demo Link](https://wordle-ui.netlify.app/)
 
 ---
 

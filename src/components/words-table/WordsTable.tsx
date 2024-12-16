@@ -10,8 +10,8 @@ const WordsTable: React.FC<WordsTableProps> = ({
   guessedWords,
   wordLength,
 }) => {
-  const getBackgroundColor = (feedback: string) => {
-    switch (feedback) {
+  const getBackgroundColor = (validity: string) => {
+    switch (validity) {
       case "correct":
         return "#28A745";
       case "wrong-place":
@@ -30,7 +30,7 @@ const WordsTable: React.FC<WordsTableProps> = ({
                 <td
                   key={idx}
                   style={{
-                    backgroundColor: getBackgroundColor(item.feedback[idx]),
+                    backgroundColor: getBackgroundColor(item.validity[idx]),
                     color: "black",
                   }}
                 >

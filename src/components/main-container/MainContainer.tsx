@@ -5,7 +5,7 @@ import WordsTable from "./../words-table/WordsTable";
 
 export type GuessedWord = {
   word: string;
-  feedback: string[];
+  validity: string[];
 };
 
 const wordleUrl = import.meta.env.VITE_API_BASE_URL;
@@ -14,6 +14,7 @@ const validWordUrl = import.meta.env.VITE_API_VALID_WORD;
 const MainContainer = () => {
   const [displayWordTable, setDisplayWordTable] = useState(false);
   const [wordLength, setWordLength] = useState(5);
+  const [targetWord, setTargetWord] = useState("");
   const [turn, setTurn] = useState(1);
   const [currGuess, setCurrGuess] = useState("");
   const [guessedWords, setGuessedWords] = useState<GuessedWord[]>([]);
@@ -47,13 +48,13 @@ const MainContainer = () => {
         }
 
         const data = await res.json();
-        const isWin = data.feedback.every(
-          (feedback: string) => feedback === "correct"
+        const isWin = data.validity.every(
+          (validity: string) => validity === "correct"
         );
 
         setGuessedWords((prev) => [
           ...prev,
-          { word: guessWord, feedback: data.feedback },
+          { word: guessWord, validity: data.validity },
         ]);
 
         if (isWin) {
@@ -92,6 +93,7 @@ const MainContainer = () => {
       } else {
         const data = await res.json();
         setGameId(data.gameId);
+        setTargetWord(data.targetWord);
         setGuessedWords([]);
         setTurn(1);
         setCurrGuess("");
@@ -151,7 +153,8 @@ const MainContainer = () => {
 
   const renderGuessInput = () => {
     if (gameStatus === "won") return <h3>{`You Won!`}</h3>;
-    if (gameStatus === "lost") return <h3>{`You Lost!`}</h3>;
+    if (gameStatus === "lost")
+      return <h3>{`You Lost! The word is ${targetWord}.`}</h3>;
     return (
       <>
         <h5>{`What's your guess?`}</h5>

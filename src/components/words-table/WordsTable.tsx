@@ -13,11 +13,11 @@ const WordsTable: React.FC<WordsTableProps> = ({
   const getBackgroundColor = (feedback: string) => {
     switch (feedback) {
       case "correct":
-        return "green";
+        return "#28A745";
       case "wrong-place":
-        return "yellow";
+        return "#FFC107";
       default:
-        return "red";
+        return "#FF5733";
     }
   };
   return (

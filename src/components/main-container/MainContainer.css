@@ -104,6 +104,10 @@ button:disabled {
   background-color: #f8f9fa;
 }
 
+.error-message {
+  color: red;
+}
+
 @media (max-width: 768px) {
   .get-game-button,
   .start-game-button {

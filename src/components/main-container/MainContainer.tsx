@@ -133,6 +133,22 @@ const MainContainer = () => {
     );
   };
 
+  const renderErrorOrLoading = () => {
+    return (
+      <>
+        {error && <p className="error-message">{`${errorMessage}`}</p>}
+        {loading && (
+          <ClipLoader
+            color="#3498db"
+            loading={loading}
+            size={30}
+            className="loading-spinner"
+          />
+        )}
+      </>
+    );
+  };
+
   const renderGuessInput = () => {
     if (gameStatus === "won") return <h3>{`You Won!`}</h3>;
     if (gameStatus === "lost") return <h3>{`You Lost!`}</h3>;
@@ -166,16 +182,18 @@ const MainContainer = () => {
   return (
     <div className="main-container">
       <h1 className="header-wordle">{`WORDLE`}</h1>
-      {error && <h4>{`${errorMessage}`}</h4>}
-      {loading && <ClipLoader color="#3498db" loading={loading} size={50} />}
 
       {displayWordTable ? (
         <>
           <WordsTable wordLength={wordLength} guessedWords={guessedWords} />
+          {renderErrorOrLoading()}
           {renderGuessInput()}
         </>
       ) : (
-        renderStartInput()
+        <>
+          {renderErrorOrLoading()}
+          {renderStartInput()}
+        </>
       )}
     </div>
   );
